@@ -58,8 +58,9 @@ def card(query,cursor):
             rows = cursor.fetchall()
             row0 = rows[0][0].split("(cost=")[1].split(' ')
             estimatedRows = row0[1].replace("rows=", "")
-        except:
+        except Exception as e:
             print(query.toSql(0))
+            print("Exception: ", e)
 
         if query.name not in cardinality:
             cardinality[query.name] = {}

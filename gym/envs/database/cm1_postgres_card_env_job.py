@@ -129,7 +129,7 @@ class CM1PostgresCardJob(gym.Env):
 
     #self.sql_query = list(open(get_queries('job_queries_simple_test_7400.txt'))
     #self.sql_query = list(open(get_queries('job_queries_simple_rejoin_test.txt'))
-    self.sql_query = list(open(get_queries('crossval/job_queries_simple_crossval_7400_3_test.txt'))
+    self.sql_query = list(open(get_queries('crossval/job_queries_simple_crossval_7400_3_test.txt')))
     self.sql_query_num = 0
 
 
