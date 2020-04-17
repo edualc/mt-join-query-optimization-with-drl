@@ -10,6 +10,8 @@ from queryoptimization.QueryGraph import Query, Relation, Query_Init, EmptyQuery
 from queryoptimization.cm1_postgres_card import cm1
 from math import sqrt
 
+from helper.paths import get_queries
+
 
 class CM1PostgresCardJob0(gym.Env):
   metadata = {'render.modes': ['human']}
@@ -125,9 +127,9 @@ class CM1PostgresCardJob0(gym.Env):
     print(num_of_relations)
 
 
-    #self.sql_query = list(open('~//PycharmProjects/mt-join-queryoptimization-with-drl/agents/queries/job_queries_simple_test_7400.txt'))
-    #self.sql_query = list(open('~//PycharmProjects/mt-join-queryoptimization-with-drl/agents/queries/job_queries_simple_rejoin_test.txt'))
-    self.sql_query = list(open('~//PycharmProjects/mt-join-queryoptimization-with-drl/agents/queries/crossval_sens/job_queries_simple_crossval_0_test.txt'))
+    #self.sql_query = list(open(get_queries('job_queries_simple_test_7400.txt')))
+    #self.sql_query = list(open(get_queries('job_queries_simple_rejoin_test.txt')))
+    self.sql_query = list(open(get_queries('crossval_sens/job_queries_simple_crossval_0_test.txt')))
     self.sql_query_num = 0
 
 
@@ -196,10 +198,10 @@ class CM1PostgresCardJob0(gym.Env):
 
   def reset(self):
     #sql_query = "SELECT * FROM company_type, info_type, movie_companies, movie_info_idx, title WHERE company_type.id = movie_companies.company_type_id AND title.id = movie_companies.movie_id AND title.id = movie_info_idx.movie_id AND movie_companies.movie_id = movie_info_idx.movie_id AND info_type.id = movie_info_idx.info_type_id;"
-    #sql_query = random.choice(list(open('~//PycharmProjects/mt-join-queryoptimization-with-drl/agents/queries/job_queries_simple_train_7400.txt'))).replace(";","")
-    #sql_query = random.choice(list(open('~//PycharmProjects/mt-join-queryoptimization-with-drl/agents/queries/job_queries_simple_rejoin_train.txt'))).replace(";", "")
-    #sql_query = random.choice(list(open('~//PycharmProjects/mt-join-queryoptimization-with-drl/agents/queries/crossval/job_queries_simple_crossval_7400_0_train_sort_a.txt'))).replace(";", "")
-    #sql_query = random.choice(list(open('~//PycharmProjects/mt-join-queryoptimization-with-drl/agents/queries/crossval_sens/job_queries_simple_crossval_0_train.txt'))).replace(";", "")
+    # sql_query = random.choice(list(open(get_queries('job_queries_simple_train_7400.txt')))).replace(";","")
+    # sql_query = random.choice(list(open(get_queries('job_queries_simple_rejoin_train.txt')))).replace(";", "")
+    # sql_query = random.choice(list(open(get_queries('crossval/job_queries_simple_crossval_7400_0_train_sort_a.txt')))).replace(";", "")
+    # sql_query = random.choice(list(open(get_queries('crossval_sens/job_queries_simple_crossval_0_train.txt')))).replace(";", "")
 
     sql_query = self.sql_query[int(self.sql_query_num)].replace(";", "")
     #print('querynum')

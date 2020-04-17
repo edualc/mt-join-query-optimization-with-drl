@@ -1,8 +1,7 @@
+from helper.paths import get_queries
 
-
-
-f = open("~//PycharmProjects/mt-join-queryoptimization-with-drl/agents/queries/job_queries_label.txt", "r")
-w = open("~//PycharmProjects/mt-join-queryoptimization-with-drl/agents/queries/job_queries_simple_labled.txt", "w")
+f = open(get_queries("job_queries_label.txt"), "r")
+w = open(get_queries("job_queries_simple_labled.txt"), "w")
 qselect="SELECT * "
 for x in f:
   y=x.split('WHERE')
