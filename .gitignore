@@ -1,305 +1,125 @@
-#################### special ####################
-/alteArbeiten/
-/old/
-# speaker pickles are too big to be saved in git,
-# manually build them when you need them
-common/data/training/speaker_pickles/*.pickle
-common/data/training/speaker_pickles/*.h5
-common/data/training/i_vector/*/*/3.h5
-common/data/training/i_vector/
+# Editors
+.vscode/
+.idea/
 
-# do not save experiment results in git
-common/data/experiments/plots/*.png
-common/data/experiments/plots/*.svg
-common/data/experiments/nets/*.h5
-common/data/experiments/logs/*.csv
-common/data/experiments/results/*.pickle
-common/data/experiments/results/*.h5
-common/data/experiments/nets/*.pickle
+# Vagrant
+.vagrant/
 
-#################### WandB #####################
-wandb/*
+# Mac/OSX
+.DS_Store
 
-#################### Python ####################
-# Byte-compiled / optimized / DLL files
-*/__pycache__/
-*.pyc
-
-#################### TIMIT ####################
-# Because this is a payed product, we can't upload it to life github
-TIMIT/crp/
-TIMIT/DOC/
-TIMIT/TEST/
-TIMIT/TRAIN/
-common/data/training/TIMIT/TEST/
-common/data/training/TIMIT/TRAIN/
-common/data/training/TIMIT/crp/
-common/data/training/TIMIT/DOC
-
-#################### VOXCELEB2 ####################
-common/data/training/VOXCELEB2/TEST/
-common/data/training/VOXCELEB2/TRAIN/
-
-#################### Misc ####################
-# Home made stuff not present in the gitignore project.
-
-# Eclipse jar description files
-*.jardesc
-
-# IntelliJ missing files
-*.iml
-*.ipr
-
-# Just because we had it in our old gitignore.
-manifest.mf
-
-#################### Language ####################
-# Language general ignores.
-
-### Maven
-# https://github.com/github/gitignore/blob/master/Maven.gitignore
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-
-#################### IDE ####################
-# IDE general ignores.
-
-### Eclipse
-# https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
-
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
-
-# Eclipse Core
-.project
-
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# PyDev specific (Python IDE for Eclipse)
-*.pydevproject
-
-# CDT-specific (C/C++ Development Tooling)
-.cproject
-
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
-
-# Java annotation processor (APT)
-.factorypath
-
-# PDT-specific (PHP Development Tools)
-.buildpath
-
-# sbteclipse plugin
-.target
-
-# Tern plugin
-.tern-project
-
-# TeXlipse plugin
-.texlipse
-
-# STS (Spring Tool Suite)
-.springBeans
-
-# Code Recommenders
-.recommenders/
-
-### JetBrains
-# https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-
-# User-specific stuff:
-/.idea/
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/dictionaries
-.idea/vcs.xml
-.idea/jsLibraryMappings.xml
-
-# Sensitive or high-churn files:
-.idea/dataSources.ids
-.idea/dataSources.xml
-.idea/dataSources.local.xml
-.idea/sqlDataSources.xml
-.idea/dynamic.xml
-.idea/uiDesigner.xml
-
-# Gradle:
-.idea/gradle.xml
-.idea/libraries
-
-# Mongo Explorer plugin:
-.idea/mongoSettings.xml
-
-## File-based project format:
-*.iws
-
-## Plugin-specific files:
-
-# IntelliJ
-/out/
-
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
-
-### NetBeans
-# https://github.com/github/gitignore/blob/master/Global/NetBeans.gitignore
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-
-### SublimeText
-# https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
-# cache files for sublime text
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-
-# workspace files are user-specific
-*.sublime-workspace
-
-# project files should be checked into the repository, unless a significant
-# proportion of contributors will probably not be using SublimeText
-# *.sublime-project
-
-# sftp configuration file
-sftp-config.json
-
-# Package control specific files
-Package Control.last-run
-Package Control.ca-list
-Package Control.ca-bundle
-Package Control.system-ca-bundle
-Package Control.cache/
-Package Control.ca-certs/
-bh_unicode_properties.cache
-
-# Sublime-github package stores a github token in this file
-# https://packagecontrol.io/packages/sublime-github
-GitHub.sublime-settings
-
-### Vim
-# https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
-# swap
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-# session
-Session.vim
-# temporary
-.netrwhist
-*~
-# auto-generated tag files
-tags
-
-#################### OS ####################
-# Operating system general ignores.
-
-### https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
-
-*.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-### https://github.com/github/gitignore/blob/master/Global/Linux.gitignore
-
-*~
-
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
-
-# KDE directory preferences
-.directory
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
-
-### https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
-
-# Windows image file caches
+# Windows
 Thumbs.db
-ehthumbs.db
 
-# Folder config file
-Desktop.ini
+# Source for the following rules: https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# C extensions
+*.so
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Windows shortcuts
-*.lnk
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
 
-#################### OTHER ####################
-# Other general ignores.
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
 
-### Dropbox
-# https://github.com/github/gitignore/blob/master/Global/Dropbox.gitignore
-# Dropbox settings and caches
-.dropbox
-.dropbox.attr
-.dropbox.cache
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
 
-# Singularity Container
-*.simg
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
