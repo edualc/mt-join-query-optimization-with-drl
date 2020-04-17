@@ -11,6 +11,7 @@ from queryoptimization.cm1_postgres_card import cm1
 from math import sqrt
 
 from helper.paths import get_queries
+from helper.database_connection import postgres_connection
 
 class CM1PostgresCardJob(gym.Env):
   metadata = {'render.modes': ['human']}
@@ -133,7 +134,7 @@ class CM1PostgresCardJob(gym.Env):
 
 
     try:
-        conn = psycopg2.connect(host="localhost", database="imdbload", user="postgres", password="admin")
+        conn = psycopg2.connect(**postgres_connection())
         #conn = psycopg2.connect(host="localhost", database="imdbload", user="docker", password="docker")
     except:
         print("I am unable to connect to the database")

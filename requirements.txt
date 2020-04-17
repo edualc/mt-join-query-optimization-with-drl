@@ -42,6 +42,7 @@ PyOpenGL==3.1.0
 pyparsing==2.3.1
 pytest==4.4.0
 python-dateutil==2.8.0
+python-decouple=3.2
 pytz==2018.9
 PyYAML==5.1
 ray==0.6.5

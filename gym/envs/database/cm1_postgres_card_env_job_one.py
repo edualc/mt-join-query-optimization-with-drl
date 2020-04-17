@@ -10,6 +10,8 @@ from math import log, sqrt
 from queryoptimization.QueryGraph import Query, Relation, Query_Init, EmptyQuery
 from queryoptimization.cm1_postgres_card import cm1
 
+from helper.database_connection import postgres_connection
+
 class CM1PostgresCardJobOne(gym.Env):
 
   metadata = {'render.modes': ['human']}
@@ -40,7 +42,7 @@ class CM1PostgresCardJobOne(gym.Env):
 
 
     try:
-        conn = psycopg2.connect(host="localhost", database="imdbload", user="postgres", password="admin")
+        conn = psycopg2.connect(**postgres_connection())
     except:
         print("I am unable to connect to the database")
     #print(query)
